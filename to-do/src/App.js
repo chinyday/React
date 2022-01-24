@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./App.module.css";
 
 function App() {
 
@@ -16,15 +17,17 @@ function App() {
     setTodo("");
   }
 
-  console.log(todos);
-
   return (
-    <div>
+    <div className={styles.mainBody}>
       <h2>my to dos ({todos.length})</h2>
       <form onSubmit={onSubmit}>
         <input onChange={onChange} value={todo} type="text" placeholder="write your to do" />    
       </form>
-      <button type="sumit" onClick={onSubmit}>add text</button>
+      <button type="sumit" onClick={onSubmit}>add</button>
+      <hr />
+      <ul>
+        {todos.map((item, index)=> <li key={index}>{item}</li>)}
+      </ul>
     </div>
   );
 }

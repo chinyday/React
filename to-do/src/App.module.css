@@ -1,0 +1,23 @@
+.mainBody {
+  background-color: white;
+  margin: 10px;
+  font-family: Arial;
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.mainBody form{
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.mainBody ul {
+	list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mainBody li{
+  padding: 10px;
+}
