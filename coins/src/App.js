@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import "./App.css";
 
 function App() {
 
@@ -34,39 +35,41 @@ function App() {
   }
 
   return (
-    <div>
-      
-      <h2>Conis 계산기</h2>
-      {loading ? 
-        <div>Loading...</div> : 
-        <div>
-          <select onChange={handelChangeSelect}>
-            <option>Select Coin!</option>
-            {coins.map((coin) => 
-              <option key={coin.id} value={coin.symbol}> {coin.rank}. {coin.name}</option>)
-            }
-          </select>
-          <input type="number" value={myPrice} onChange={handleInputValue} placeholder="$를 입력해주세요." />
-          <button type="button" onClick={onclick}>계산하기</button>
-        </div>
-      }
+    <div className="wrapper"> 
+      <div className="coin_calculator">
+        <h2>Conis 계산기</h2>
+        {loading ? 
+          <div>Loading...</div> : 
+          <div>
+            <select onChange={handelChangeSelect}>
+              <option>Select Coin!</option>
+              {coins.map((coin) => 
+                <option key={coin.id} value={coin.symbol}> {coin.rank}. {coin.name}</option>)
+              }
+            </select>
+            <input type="number" value={myPrice} onChange={handleInputValue} placeholder="$를 입력해주세요." />
+            <button type="button" onClick={onclick}>계산하기</button>
+          </div>
+        }
 
-      {
-      submitting ? 
-       <h3>$ {myPrice}를 가지고 {selectCoin.name}({selectCoin.symbol}) {cost}개를 가질 수 있습니다.</h3> : null
-      }
-      
-      
-      <hr /><br /><br /><br /><br />
-      <h2>Conis 시세</h2>
-      {loading ? 
-        <div>Loading...</div> : 
-        <ul>
-          {coins.map((coin) => 
-            <li key={coin.id} value={coin.symbol}> {coin.rank}. {coin.name} = 1{coin.symbol} : $ {coin.quotes.USD.price}</li>)
-          }
-        </ul>
-      }
+        {
+        submitting ? 
+        <h3>$ {myPrice}를 가지고 {selectCoin.name}({selectCoin.symbol}) {cost}개를 가질 수 있습니다.</h3> : null
+        }
+      </div>
+
+      <hr />
+      <div className="coin_price">
+        <h2>Conis 시세</h2>
+        {loading ? 
+          <div>Loading...</div> : 
+          <ul className="ul">
+            {coins.map((coin) => 
+              <li className="li" key={coin.id} value={coin.symbol}> <span className="name">{coin.rank}. {coin.name} </span><span className="price">1{coin.symbol} : $ {coin.quotes.USD.price}</span></li>)
+            }
+          </ul>
+        }
+      </div>
 
     </div>
   );

@@ -1,0 +1,24 @@
+.wrapper{
+  width: 800px;
+  margin: 0 auto;
+}
+.coin_calculator input{
+  margin: 0 10px;
+}
+.wrapper hr{
+  margin: 100px 0 50px;
+}
+.coin_price .ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.coin_price .li{
+  display: Flex;
+  margin: 5px;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+.coin_price .li span{
+  flex: 1 1 40%;
+}
