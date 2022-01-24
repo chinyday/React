@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="wrapper"> 
       <div className="coin_calculator">
-        <h2>Conis 계산기</h2>
+        <h2>Coins 계산하기</h2>
         {loading ? 
           <div>Loading...</div> : 
           <div>
@@ -60,12 +60,15 @@ function App() {
 
       <hr />
       <div className="coin_price">
-        <h2>Conis 시세</h2>
+        <h2>Coins 시세 정보</h2>
         {loading ? 
           <div>Loading...</div> : 
           <ul className="ul">
             {coins.map((coin) => 
-              <li className="li" key={coin.id} value={coin.symbol}> <span className="name">{coin.rank}. {coin.name} </span><span className="price">1{coin.symbol} : $ {coin.quotes.USD.price}</span></li>)
+              <li className="li" key={coin.id} value={coin.symbol}> 
+                <span className="name">{coin.rank}. {coin.name} </span>
+                <span className="price">1{coin.symbol} : $ {coin.quotes.USD.price}</span>
+              </li>)
             }
           </ul>
         }
