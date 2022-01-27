@@ -60,7 +60,7 @@ function App() {
 
       <hr />
       <div className="coin_price">
-        <h2>Coins 시세 정보</h2>
+        <h2>Coins 시세 정보 ({coins.length}개)</h2>
         {loading ? 
           <div>Loading...</div> : 
           <ul className="ul">
